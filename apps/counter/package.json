@@ -1,0 +1,26 @@
+{
+  "name": "@cosmos/counter",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@cosmos/components": "*",
+    "@cosmos/stores": "*"
+  },
+  "peerDependencies": {
+    "@types/jest": "*",
+    "@types/node": "*",
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "customize-cra": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-scripts": "*",
+    "typescript": "*"
+  }
+}
