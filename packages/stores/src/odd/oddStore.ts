@@ -1,7 +1,7 @@
 import { makeAutoObservable } from 'mobx';
-import CounterStore from './counterStore';
+import { CounterStore } from '../counter';
 
-export default class OddStore {
+export class OddStore {
   isOdd = false;
   counterStore: CounterStore;
 

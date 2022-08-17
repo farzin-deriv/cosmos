@@ -1,5 +1,5 @@
 import { Button } from '@cosmos/components';
-import { observer, useStore } from '@cosmos/stores';
+import { observer, useCounterStore, useOddStore, useThemeStore } from '@cosmos/stores';
 import React, { ReactElement } from 'react';
 
 const App = (): ReactElement => {
@@ -7,18 +7,20 @@ const App = (): ReactElement => {
 };
 
 const Content = (): ReactElement => {
-  const { counterStore, themeStore, oddStore } = useStore();
+  const counter = useCounterStore();
+  const odd = useOddStore();
+  const theme = useThemeStore();
 
   return (
     <div style={{ padding: 20, backgroundColor: 'tomato' }}>
       <h1>Counter App</h1>
-      <h2>{counterStore.count}</h2>
-      <Button title="increase" onClick={() => counterStore.increase()} />
-      <Button title="decrease" onClick={() => counterStore.decrease()} />
-      <h2>is odd: {oddStore.isOdd ? 'yes' : 'no'}</h2>
-      <Button title="check if count is odd" onClick={() => oddStore.isCountOdd()} />
-      <h2>theme: {themeStore.isDark ? 'dark' : 'light'}</h2>
-      <Button title="toggle theme" onClick={() => themeStore.toggle()} />
+      <h2>{counter.count}</h2>
+      <Button title="increase" onClick={() => counter.increase()} />
+      <Button title="decrease" onClick={() => counter.decrease()} />
+      <h2>is odd: {odd.isOdd ? 'yes' : 'no'}</h2>
+      <Button title="check if count is odd" onClick={() => odd.isCountOdd()} />
+      <h2>theme: {theme.isDark ? 'dark' : 'light'}</h2>
+      <Button title="toggle theme" onClick={() => theme.toggle()} />
     </div>
   );
 };

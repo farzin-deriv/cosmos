@@ -1,13 +1,17 @@
 {
   "name": "cosmos",
   "version": "1.0.0",
-  "main": "index.js",
   "private": true,
   "license": "MIT",
   "workspaces": [
     "apps/*",
     "packages/*"
   ],
+  "scripts": {
+    "main:start": "yarn workspace @cosmos/main start",
+    "counter:start": "yarn workspace @cosmos/counter start",
+    "tcs": "npx tsc"
+  },
   "dependencies": {
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "24.0.19",

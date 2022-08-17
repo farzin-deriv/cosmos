@@ -1,5 +1,5 @@
 import Counter from '@cosmos/counter/src/App';
-import { observer, useStore } from '@cosmos/stores';
+import { observer, useThemeStore } from '@cosmos/stores';
 import React, { ReactElement } from 'react';
 
 const App = (): ReactElement => {
@@ -7,12 +7,12 @@ const App = (): ReactElement => {
 };
 
 const Content = (): ReactElement => {
-  const { themeStore } = useStore();
+  const theme = useThemeStore();
 
   return (
     <div style={{ padding: 20, backgroundColor: 'lime' }}>
       <h1>Main App</h1>
-      <h2>theme: {themeStore.isDark ? 'dark' : 'light'}</h2>
+      <h2>theme: {theme.isDark ? 'dark' : 'light'}</h2>
       <Counter />
     </div>
   );

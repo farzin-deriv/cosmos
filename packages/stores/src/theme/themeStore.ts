@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-export default class ThemeStore {
+export class ThemeStore {
   isDark = false;
 
   constructor() {
