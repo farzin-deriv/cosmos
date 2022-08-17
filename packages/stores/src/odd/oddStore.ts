@@ -2,7 +2,6 @@ import { makeAutoObservable } from 'mobx';
 import { CounterStore } from '../counter';
 
 export class OddStore {
-  isOdd = false;
   counterStore: CounterStore;
 
   constructor(counterStore: CounterStore) {
@@ -10,8 +9,7 @@ export class OddStore {
     this.counterStore = counterStore;
   }
 
-  isCountOdd(): boolean {
-    this.isOdd = this.counterStore.count % 2 !== 0;
-    return this.isOdd;
+  get isOdd(): boolean {
+    return this.counterStore.count % 2 !== 0;
   }
 }
